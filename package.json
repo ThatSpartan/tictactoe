@@ -1,0 +1,19 @@
+{
+  "name": "notes-eleves",
+  "version": "0.0.1",
+  "description": "Application pour gérer les notes des éleves",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThatSpartan/notes-eleves.git"
+  },
+  "author": "ThatSpartan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ThatSpartan/notes-eleves/issues"
+  },
+  "homepage": "https://github.com/ThatSpartan/notes-eleves#readme"
+}
