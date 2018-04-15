@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/ThatSpartan/notes-eleves/issues"
   },
-  "homepage": "https://github.com/ThatSpartan/notes-eleves#readme"
+  "homepage": "https://github.com/ThatSpartan/notes-eleves#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-batch": "^1.0.5",
+    "gulp-coffee": "^3.0.2",
+    "gulp-javascript-obfuscator": "^1.1.4",
+    "gulp-watch": "^5.0.0"
+  }
 }
