@@ -20,7 +20,10 @@
     "gulp": "^3.9.1",
     "gulp-batch": "^1.0.5",
     "gulp-coffee": "^3.0.2",
+    "gulp-concat": "^2.6.1",
     "gulp-javascript-obfuscator": "^1.1.4",
+    "gulp-plumber": "^1.2.0",
+    "gulp-stylus": "^2.7.0",
     "gulp-watch": "^5.0.0"
   }
 }

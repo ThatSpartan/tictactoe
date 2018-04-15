@@ -1,2 +1,6 @@
 console.log 'Hello There!'
-# New modification
+hey = 100
+console.log hey
+console.log 4*4
+hello = ->
+    hey = 2*3
