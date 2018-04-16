@@ -1,6 +1,9 @@
-console.log 'Hello There!'
-hey = 100
-console.log hey
-console.log 4*4
-hello = ->
-    hey = 2*3
+class Bear
+    constructor: (@name) ->
+
+    attack: ->
+        "#{@name} the bear attacks with his bare paws!"
+
+sylvain = new Bear 'Sylvain'
+
+console.log sylvain.attack()

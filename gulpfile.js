@@ -17,7 +17,7 @@ gulp.task('javascript', function(){
 });
 
 gulp.task('style', function() {
-	gulp.src('./src/*.coffee')
+	gulp.src('./src/*.styl')
 		.pipe(plumber())
 		.pipe(stylus())
 		.pipe(gulp.dest('./puclic/'))
