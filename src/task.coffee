@@ -6,3 +6,7 @@ class Bear
 
     attack: ->
         "#{@name} the bear attacks with his bare paws!"
+
+hello = 'hello'
+
+# export {Task, Bear}
