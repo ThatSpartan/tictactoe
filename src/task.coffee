@@ -9,4 +9,5 @@ class Bear
 
 hello = 'hello'
 
-# export {Task, Bear}
+# export {Task, Bear, hello}
+module.exports = {hello, Bear}
