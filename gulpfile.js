@@ -17,6 +17,14 @@ gulp.task('javascript', function(){
 		.pipe(gulp.dest('./puclic/'))
 });
 
+gulp.task('coffee', function(){
+	gulp.src('./src/*.coffee')
+		.pipe(plumber())
+		.pipe(coffeescript({ bare: true }))
+		.pipe(concat('script.js'))
+		.pipe(gulp.dest('./puclic/'))
+});
+
 gulp.task('style', function() {
 	gulp.src('./src/*.styl')
 		.pipe(plumber())
