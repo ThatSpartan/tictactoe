@@ -31,3 +31,33 @@ describe 'Test the Bear external class', ->
 	it 'should return \'Sylvain the bear is drunk!\'', ->
 		sylvain = new Bear 'Sylvain'
 		sylvain.drunk().should.equal 'Sylvain the bear is drunk!'
+
+# Tests
+
+Eleve = script.Eleve
+
+describe 'Tests for Eleve', ->
+	rose = null
+	beforeEach ->
+		rose = new Eleve 'Rose'
+
+	it 'Should return Eleve\'s name', ->
+		rose.name.should.equal 'Rose'
+
+	it 'Should add one grade', ->
+		rose.addGrade 69
+		rose.grades.should.have.members [69]
+
+	it 'Should add two grades', ->
+		rose.addGrade [40, 50]
+		rose.grades.should.have.members [40, 50]
+
+	it 'Should remove one grade', ->
+		rose.grades = [69, 40]
+		rose.rmGrade 69
+		rose.grades.should.have.members [40]
+
+	it 'Should remove a grade not in the list', ->
+		rose.grades = [60, 40]
+		rose.rmGrade 100
+		rose.grades.should.have.members [60, 40]

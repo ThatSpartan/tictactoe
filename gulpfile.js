@@ -45,6 +45,7 @@ gulp.task('test', function () {
 	gulp.src('test/**/*.{js,coffee}', {read: false})
 		// .pipe(plumber())
 		.pipe(mocha({reporter: 'nyan', require: ['coffee-script/register']}))
+		// .pipe(mocha({require: ['coffee-script/register']}))
 		.on('error', handleError);
 });
 
