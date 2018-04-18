@@ -7,8 +7,9 @@ class Bear
 # Application
 
 class Eleve
-    constructor: (@name) ->
+    constructor: (@name, @last_name) ->
         @grades = []
+        @full_name = "#{@name} #{@last_name}"
 
     addGrade: (grade) ->
         if typeof grade is 'object'
@@ -22,6 +23,14 @@ class Eleve
             i = @grades.indexOf(grade)
             if i isnt -1
                 @grades.splice i, 1
+
+    average: ->
+        sum = 0
+        for n in @grades 
+            sum += n
+        len = @grades.length
+        sum / len
+        
 
 # This line needs to be last
 module.exports = {Bear, Eleve}

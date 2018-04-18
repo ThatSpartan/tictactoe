@@ -39,10 +39,13 @@ Eleve = script.Eleve
 describe 'Tests for Eleve', ->
 	rose = null
 	beforeEach ->
-		rose = new Eleve 'Rose'
+		rose = new Eleve 'Rose', 'Grezla'
 
 	it 'Should return Eleve\'s name', ->
 		rose.name.should.equal 'Rose'
+
+	it 'Should return Eleve\'s full name', ->
+		rose.full_name.should.equal 'Rose Grezla'
 
 	it 'Should add one grade', ->
 		rose.addGrade 69
@@ -61,3 +64,14 @@ describe 'Tests for Eleve', ->
 		rose.grades = [60, 40]
 		rose.rmGrade 100
 		rose.grades.should.have.members [60, 40]
+
+	it 'Should show grades', ->
+		grades = [10, 20, 30, 40]
+		for g in grades
+			rose.addGrade g
+		rose.grades.should.have.members [10, 20, 30, 40]
+
+	it 'Should return the average grade', ->
+		rose.grades = [40, 40, 60, 60]
+		a = rose.average()
+		a.should.equal 50
