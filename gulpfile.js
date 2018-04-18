@@ -6,6 +6,7 @@ var coffeescript = require('gulp-coffee');
 var javascript_obfuscator = require('gulp-javascript-obfuscator');
 var concat = require('gulp-concat');
 var stylus = require('gulp-stylus');
+var mocha = require('gulp-mocha');
 
 gulp.task('javascript', function(){
 	gulp.src('./src/*.coffee')
@@ -28,5 +29,35 @@ gulp.task('watch', function () {
 		gulp.start(['javascript', 'style'], done)
 	}));
 });
+
+// gulp.task('default', () =>
+//     gulp.src('test.js', {read: false})
+//         // `gulp-mocha` needs filepaths so you can't have any plugins before it
+//         .pipe(mocha({reporter: 'nyan'}))
+// );
+
+function handleError(err) {
+	// console.log(err.toString());
+	this.emit('end');
+};
+
+gulp.task('test', function () {
+	gulp.src('test/**/*.{js,coffee}', {read: false})
+		// .pipe(plumber())
+		.pipe(mocha({reporter: 'nyan', require: ['coffee-script/register']}))
+		.on('error', handleError);
+});
+
+gulp.task('testw', function () {
+	gulp.watch(['test/*', 'src/*'], ['test']);
+});
+
+// gulp.watch(['test/**', 'lib/**'], batch(function (events, cb) {
+//     return gulp.src(['test/*.js'])
+//         .pipe(mocha({ reporter: 'list' }))
+//         .on('error', function (err) {
+//             console.log(err.stack);
+//         });
+// }));
 
 gulp.task('default', [ 'watch' ]);

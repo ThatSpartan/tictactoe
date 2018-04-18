@@ -1,6 +1,6 @@
 {
   "name": "notes-eleves",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Application pour gérer les notes des éleves",
   "main": "index.js",
   "scripts": {
@@ -23,6 +23,7 @@
     "gulp-coffee": "^3.0.2",
     "gulp-concat": "^2.6.1",
     "gulp-javascript-obfuscator": "^1.1.4",
+    "gulp-mocha": "^5.0.0",
     "gulp-plumber": "^1.2.0",
     "gulp-stylus": "^2.7.0",
     "gulp-watch": "^5.0.0"
