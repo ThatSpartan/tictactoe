@@ -26,11 +26,28 @@ class Eleve
 
     average: ->
         sum = 0
-        for n in @grades 
+        for n in @grades
             sum += n
         len = @grades.length
         sum / len
-        
+
+class Eleves
+    constructor: ->
+        @liste = []
+
+    addEleve: (name, last_name, grades = []) ->
+        exists = false
+        for e in @liste
+            if e.name is name and e.last_name is last_name
+                exists = true
+        @liste.push new Eleve(name, last_name, grades) if not exists
+
+    removeEleve: (name, last_name) ->
+        i = 0
+        for eleve in @liste
+            if (eleve.name is name) and (eleve.last_name is last_name)
+                i = @liste.indexOf eleve
+        @liste.splice i, 1
 
 # This line needs to be last
-module.exports = {Bear, Eleve}
+module.exports = {Bear, Eleve, Eleves}

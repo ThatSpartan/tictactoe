@@ -35,6 +35,7 @@ describe 'Test the Bear external class', ->
 # Tests
 
 Eleve = script.Eleve
+Eleves = script.Eleves
 
 describe 'Tests for Eleve', ->
 	rose = null
@@ -75,3 +76,21 @@ describe 'Tests for Eleve', ->
 		rose.grades = [40, 40, 60, 60]
 		a = rose.average()
 		a.should.equal 50
+
+describe 'Test pour la liste des éleves', ->
+	eleves = new Eleves
+	eleves.liste = [
+		new Eleve('Sylvain', 'Sabourin', [10,20,30]),
+		new Eleve('Alex', 'Tittley', [40,68,38,69]),
+		new Eleve('Salut', 'Cardinal', [2,55,76,45,34,42]),
+		new Eleve('Marielle', 'Cléroux', [20,48])
+	]
+
+	it 'Should be an instance of Eleves', ->
+		eleves.should.be.instanceof Eleves
+
+	it 'Should contain the new student', ->
+
+	it 'Should not let me add a student that\'s already there', ->
+
+	it 'Should not contain the removed student', ->
