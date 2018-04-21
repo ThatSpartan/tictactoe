@@ -13,7 +13,7 @@ gulp.task('javascript', function(){
 		.pipe(plumber())
 		.pipe(coffeescript({ bare: true }))
 		.pipe(concat('javascript.js'))
-		.pipe(javascript_obfuscator())
+		// .pipe(javascript_obfuscator())
 		.pipe(gulp.dest('./puclic/'))
 });
 
