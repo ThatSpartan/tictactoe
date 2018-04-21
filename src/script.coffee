@@ -7,8 +7,7 @@ class Bear
 # Application
 
 class Eleve
-    constructor: (@name, @last_name) ->
-        @grades = []
+    constructor: (@name, @last_name, @grades = []) ->
         @full_name = "#{@name} #{@last_name}"
 
     addGrade: (grade) ->
@@ -55,5 +54,5 @@ class Eleves
                     i.push @liste.indexOf eleve
             @liste.splice i, 1 if i.length is 1
 
-# This line needs to be last
-module.exports = {Bear, Eleve, Eleves}
+# This line needs to be last (uncomment for test only)
+# module.exports = {Bear, Eleve, Eleves}
