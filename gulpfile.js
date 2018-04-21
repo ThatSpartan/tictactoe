@@ -52,8 +52,10 @@ function handleError(err) {
 gulp.task('test', function () {
 	gulp.src('test/**/*.{js,coffee}', {read: false})
 		// .pipe(plumber())
-		.pipe(mocha({reporter: 'nyan', require: ['coffee-script/register']}))
+		// .pipe(mocha({reporter: 'nyan', require: ['coffee-script/register']}))
 		// .pipe(mocha({require: ['coffee-script/register']}))
+		// .pipe(mocha({reporter: 'min', require: ['coffee-script/register']}))
+		.pipe(mocha({reporter: 'spec', require: ['coffee-script/register']}))
 		.on('error', handleError);
 });
 
