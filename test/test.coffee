@@ -90,7 +90,44 @@ describe 'Test pour la liste des éleves', ->
 		eleves.should.be.instanceof Eleves
 
 	it 'Should contain the new student', ->
+		eleves.addEleve 'Rose', 'Grezla', [24,46,67,53]
+		names = ''
+		for n in eleves.liste
+			names += n.name
+		names.should.equal 'SylvainAlexSalutMarielleRose'
 
 	it 'Should not let me add a student that\'s already there', ->
+		eleves.addEleve 'Rose', 'Grezla', [39]
+		names = ''
+		for n in eleves.liste
+			names += n.name
+		names.should.equal 'SylvainAlexSalutMarielleRose'
 
 	it 'Should not contain the removed student', ->
+		eleves.removeEleve 'Rose'
+		names = ''
+		for n in eleves.liste
+			names += n.name
+		names.should.equal 'SylvainAlexSalutMarielle'
+		
+	it 'Should add two student with same first name', ->
+		eleves.addEleve 'Katherine', 'Lortie', [39,45,41,46,64,24,64]
+		eleves.addEleve 'Katherine', 'Dumas', [34,64,75,34]
+		names = ''
+		for n in eleves.liste
+			names += n.name
+		names.should.equal 'SylvainAlexSalutMarielleKatherineKatherine'
+
+	it 'Should not remove student when passing only first name', ->
+		eleves.removeEleve 'Katherine'
+		names = ''
+		for n in eleves.liste
+			names += n.name
+		names.should.equal 'SylvainAlexSalutMarielleKatherineKatherine'
+
+	it 'Should remove student when passing both names', ->
+		eleves.removeEleve 'Katherine', 'Dumas'
+		names = ''
+		for n in eleves.liste
+			names += n.name
+		names.should.equal 'SylvainAlexSalutMarielleKatherine'

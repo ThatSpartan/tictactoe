@@ -42,12 +42,18 @@ class Eleves
                 exists = true
         @liste.push new Eleve(name, last_name, grades) if not exists
 
-    removeEleve: (name, last_name) ->
-        i = 0
-        for eleve in @liste
-            if (eleve.name is name) and (eleve.last_name is last_name)
-                i = @liste.indexOf eleve
-        @liste.splice i, 1
+    removeEleve: (name, last_name = 'default') ->
+        i = []
+        if last_name is 'default'
+            for eleve in @liste
+                if eleve.name is name
+                    i.push @liste.indexOf eleve
+            @liste.splice i, 1 if i.length is 1
+        else
+            for eleve in @liste
+                if eleve.name is name and eleve.last_name is last_name
+                    i.push @liste.indexOf eleve
+            @liste.splice i, 1 if i.length is 1
 
 # This line needs to be last
 module.exports = {Bear, Eleve, Eleves}
