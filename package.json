@@ -1,21 +1,21 @@
 {
-  "name": "notes-eleves",
-  "version": "0.0.2",
-  "description": "Application pour gérer les notes des éleves",
+  "name": "tic-tac-toe",
+  "version": "0.0.1",
+  "description": "Jeu de tic tac toe",
   "main": "index.js",
   "scripts": {
     "test": "mocha --require coffee-script/register \"test/**/*.{js,coffee}\""
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ThatSpartan/notes-eleves.git"
+    "url": ""
   },
   "author": "ThatSpartan",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ThatSpartan/notes-eleves/issues"
+    "url": ""
   },
-  "homepage": "https://github.com/ThatSpartan/notes-eleves#readme",
+  "homepage": "",
   "devDependencies": {
     "coffeescript": "^2.2.4",
     "gulp": "^3.9.1",
