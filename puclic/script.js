@@ -1,48 +1,35 @@
-var Bear, Eleve;
+var Game;
 
-Bear = class Bear {
-  constructor(name) {
-    this.name = name;
+Game = class Game {
+  constructor() {
+    this.current_player = 0;
+    this.board = new Array(9);
   }
 
-  drunk() {
-    return `${this.name} the bear is drunk!`;
+  new() {
+    return this.board = new Array(9);
   }
 
-};
-
-// Application
-Eleve = class Eleve {
-  constructor(name) {
-    this.name = name;
-    this.grades = [];
-  }
-
-  addGrade(grade) {
-    var i, j, len, results;
-    if (typeof grade === 'object') {
-      results = [];
-      for (j = 0, len = grade.length; j < len; j++) {
-        i = grade[j];
-        results.push(this.grades.push(i));
-      }
-      return results;
-    } else if (typeof grade === 'number') {
-      return this.grades.push(grade);
+  switch_player() {
+    if (this.current_player === 0) {
+      return this.current_player = 1;
+    } else {
+      return this.current_player = 0;
     }
   }
 
-  rmGrade(grade) {
-    var i;
-    if (typeof grade === 'number') {
-      i = this.grades.indexOf(grade);
-      if (i !== -1) {
-        return this.grades.splice(i, 1);
-      }
+  play(m) {
+    if (this.board[m] === void 0) {
+      this.board[m] = this.current_player;
+      return this.switch_player();
+    } else {
+      return 'spot taken';
     }
   }
 
 };
 
-// This line needs to be last
-module.exports = {Bear, Eleve};
+// This line needs to be last (uncomment for test only)
+module.exports = {Game};
+
+
