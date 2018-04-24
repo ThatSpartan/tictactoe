@@ -1,0 +1,16 @@
+#game {
+  border-collapse: collapse;
+}
+#game td {
+  border: 2px solid #000;
+  height: 80px;
+  width: 80px;
+  background-image: url("assets/images.png");
+  background-repeat: no-repeat;
+}
+.x {
+  background-position-x: -80px;
+}
+.o {
+  background-position-x: -160px;
+}
